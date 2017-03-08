@@ -3,13 +3,15 @@
 
 <ul class="list-group">
   <% @rooms.each do |room| %>
-  <li class="list-group-item"><%= room.name %></li>
+  <li class="list-group-item"><%= link_to room.name, room_path(id: room.id) %></li>
   <% end %>
 </ul>
 
 <%= form_for Room.new do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
+	<div class="form-group">
+		<%= f.label :name %>
+		<%= f.text_field :name, class:"form-control" %>
+	</div>
 
-	<%= f.submit %>
+	<%= f.submit nil, class:"btn btn-primary" %>
 <% end %>
