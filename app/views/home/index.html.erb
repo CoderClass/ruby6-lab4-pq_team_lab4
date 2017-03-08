@@ -7,9 +7,9 @@
   <% end %>
 </ul>
 
-<%= form_for Room.new do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
+<% form_for @rooms do |f| %>
+	<% f.label :name %>
+	<% f.text_field :name %>
 
-	<%= f.submit %>
+	<% f.submit %>
 <% end %>
