@@ -7,9 +7,12 @@
   <% end %>
 </ul>
 
-<% form_for @rooms do |f| %>
+<% form_for Room.new do |f| %>
+<div class="form-group">
 	<% f.label :name %>
-	<% f.text_field :name %>
+	<% f.text_field :name, class: 'form-control' %>
+</div>
+	
 
-	<% f.submit %>
+	<% f.submit nil, class: 'btn btn-primary'%>
 <% end %>
